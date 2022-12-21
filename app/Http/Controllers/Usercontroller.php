@@ -253,7 +253,7 @@ class Usercontroller extends Controller
         $to_email = env('MAIL_USERNAME');
 
         $now = Carbon::now('Asia/Ho_Chi_Minh');
-        $tile_mail = "Liên Hệ từ ShopPv" . ' ' . $now;
+        $tile_mail = "Liên Hệ từ SHOPPHUOCTHIEN" . ' ' . $now;
         $data['email'] = $req->email;
 
         $name_mail = $req->name;

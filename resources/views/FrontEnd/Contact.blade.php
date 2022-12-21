@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')    
+@section('title')
 	{{ trans('home.contact') }}
 @endsection
 @section('content-layout')
@@ -24,7 +24,7 @@
         <form id="contact-form" class="contact-form" action="{{route('lienhe')}}" method="post">
         	<input type="hidden" name="_token" value="{{csrf_token()}}">
 		    @if(Session::has('thongbao'))
-		        <div style="height: 50px" class="alert alert-success form-control" style="width: 100%">{{Session::get('thongbao')}}</div> 
+		        <div style="height: 50px" class="alert alert-success form-control" style="width: 100%">{{Session::get('thongbao')}}</div>
 		    @endif
             <div class="address-wrapper row">
                 <div class="col-md-12">
@@ -60,7 +60,7 @@
 <!-- Contact Email Area End -->
 <!-- Google Map Start -->
 <div class="goole-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125317.66191195612!2d106.5869040563149!3d11.025348113916458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d17273d88fa1%3A0x4ce77ac2d75e8e4c!2zVHAuIFRo4bunIEThuqd1IE3hu5l0LCBCw6xuaCBExrDGoW5nLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1605159415568!5m2!1svi!2sus" id="map" style="height:400px; width: 100%"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.556295961048!2d106.76522761530285!3d10.845227960884403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527a6d4470a5d%3A0xf9c83bc533004071!2zVHLGsOG7nW5nIFRydW5nIGPhuqVwIMSQ4bqhaSBWaeG7h3QgdGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1671367161602!5m2!1svi!2s" id="map" style="height:400px; width: 100%"></iframe>
 </div>
-<!-- Google Map End --> 
+<!-- Google Map End -->
 @endsection

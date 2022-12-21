@@ -38,7 +38,7 @@ class passController extends Controller
         $data = $req->all();
         $now = date('Y-m-d');
 
-        $tile_mail = "Lấy lại mật khẩu ShopPV".' '.$now;
+        $tile_mail = "Lấy lại mật khẩu SHOPPHUOCTHIEN".' '.$now;
         $user = User::where('email', '=', $data['email_account'])->get();
         foreach ($user as $key => $value) {
             $user_id = $value->id;
