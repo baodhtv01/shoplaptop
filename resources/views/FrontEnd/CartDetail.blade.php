@@ -1,5 +1,5 @@
 @extends('Layout')
-@section('title')
+@section('title')    
 {{ trans('home.carttt') }}
 @endsection
 @section('content-layout')
@@ -47,7 +47,7 @@
                             </thead>
         					@if(Session('cart'))
                             <tbody>
-								@foreach($product_cart as $cart)
+								@foreach($product_cart as $cart)	
                                 <tr>
                                     <td class="product-thumbnail">
                                         <a href="#"><img src="source/image/product/{{$cart['item']['image']}}" alt="cart-image" height="101.6px" width="101.6px" /></a>
@@ -56,9 +56,9 @@
                                     <td class="product-price">
                                     	<span class="amount">
 											@if($cart['item']['promotion_price']==0)
-												{{number_format($cart['item']['unit_price'],0,',','.')}} VNĐ
-											@else
-												{{number_format($cart['item']['promotion_price'],0,',','.')}} VNĐ
+												{{number_format($cart['item']['unit_price'],0,',','.')}} VNĐ 
+											@else 
+												{{number_format($cart['item']['promotion_price'],0,',','.')}} VNĐ 
 											@endif
                                     	</span>
                                     </td>
@@ -87,7 +87,7 @@
                     <!-- Table Content Start -->
                     <div class="row">
                        <!-- Cart Button Start -->
-
+                       	
                         <div class="col-md-8 col-sm-12">
                         	@if(!Session::get('coupon'))
 							<form method="post" action="{{url('/check-coupon')}}">
@@ -95,7 +95,7 @@
 
 									@csrf
 									<div>
-										<input type="text" name="coupon_code" placeholder="{{trans('home.CodeCoupon')}}" style="background: #fff; border: 1px solid #000; text-transform: none;color: #000">
+										<input type="text" name="coupon_code" placeholder="{{trans('home.CodeCoupon')}}" style="background: #fff; border: 1px solid #000; text-transform: none;color: #000"> 
 										<input type="submit" name="check_coupon" value="{{trans('home.ApplyCoupon')}}">
 									</div>
 
@@ -131,14 +131,14 @@
                                         </tr>
                                         <tr class="cart-subtotal">
                                         	<th>Coupon</th>
-                                        	<td>
+                                        	<td>													
                                         		@foreach(Session::get('coupon') as $key => $coun)
 													@if($coun['coupon_condition']==0)
 														{{$coun['coupon_number']}} %
 													@else
 														{{number_format($coun['coupon_number'],0,',','.')}} VNĐ
 													@endif
-												@endforeach
+												@endforeach	
 											</td>
                                         </tr>
                                         @else
@@ -203,7 +203,7 @@
                                     <form action="{{route('payorder')}}" method="post">
                                         @csrf
                                         <button type="submit" style="border: 0px">{{ trans('home.thanhtoan') }}</button>
-{{--                                        <button name="payorderonline" value="2" type="submit" style="border: 0px">{{ trans('home.thanhtoanonline') }}</button>--}}
+                                        <button name="payorderonline" value="2" type="submit" style="border: 0px">{{ trans('home.thanhtoanonline') }}</button>
                                     </form>
                                 </div>
                             </div>
