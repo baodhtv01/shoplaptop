@@ -43,7 +43,7 @@
 <body>
 	<div class="coupon">
 		<div class="container">
-			<h3>Mã khuyến mãi từ shop <a href="http://localhost/shoplaptop_1/" target="_blank">ShopPHUOCTHIEN</a></h3>
+			<h3>Mã khuyến mãi từ shop <a href="http://localhost/shoplaptop_1/" target="_blank">ShopPv.vn</a></h3>
 		</div>
 		<div class="container" style="background: #fff">
 			<h2 class="note"><b><i>Giảm @if($coupon_array['coupon_send_new']['coupon_condition'] == 0)
@@ -51,8 +51,8 @@
 			@else
 				{{number_format($coupon_array['coupon_send_new']['coupon_number'],0,',','.')}} VNĐ
 			@endif cho tổng đơn hàng trên 2 triệu</i></b></h2>
-			<p>Quý khách đã từng mua hàng tại shop <a href="http://localhost/shoplaptop_1/" target="_blank">ShopPHUOCTHIEN.vn</a> nếu đã có tài khoản xin vui lòng <a href="http://localhost/shoplaptop_1/" target="_blank" style="color: red">Đăng Nhập</a> vào tài khoản để mua hàng và nhập mã code phía dưới để được giảm giá mua hàng, xin cảm ơn quý khách. Chúc quý khách thật nhiều sức khỏe và bình an trong cuộc sống.  </p>
-
+			<p>Quý khách đã từng mua hàng tại shop <a href="http://localhost/shoplaptop_1/" target="_blank">ShopPv.vn</a> nếu đã có tài khoản xin vui lòng <a href="http://localhost/shoplaptop_1/" target="_blank" style="color: red">Đăng Nhập</a> vào tài khoản để mua hàng và nhập mã code phía dưới để được giảm giá mua hàng, xin cảm ơn quý khách. Chúc quý khách thật nhiều sức khỏe và bình an trong cuộc sống.  </p>
+			
 		</div>
 		<div class="container">
 			<p class="code">Sừ dụng Code sau: <span class="promo">{{$coupon_array['coupon_send_new']['coupon_code']}}</span></p>

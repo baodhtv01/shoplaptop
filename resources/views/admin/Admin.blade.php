@@ -42,10 +42,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('trang-chu-admin')}}">
-{{--                <div class="sidebar-brand-icon rotate-n-15">--}}
-{{--                    <i class="fas fa-dragon"></i>--}}
-{{--                </div>--}}
-                <div class="sidebar-brand-text mx-3">Administrator <span class="text-warning">{{Auth::user()->full_name}}</span></div>
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-dragon"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Administrator</div>
             </a>
 
             <!-- Divider -->
@@ -784,7 +784,7 @@
               element: 'donut-chart',
               resize: true,
               colors: [
-                '#e62e04',
+                '#4e73df',
                 '#36b9cc',
                 '#1cc88a',
                 '#f6c23e',
@@ -809,7 +809,7 @@
                 element: 'chart',
                 parseTime: false,
                 hideHover:'auto',
-                barColors: ['#36b9cc', '#e62e04', '#1cc88a', '#e74a3b'],
+                barColors: ['#36b9cc', '#4e73df', '#1cc88a', '#e74a3b'],
 
                 xkey: 'period',
                 ykeys: ['order', 'sales', 'profit', 'quantity'],

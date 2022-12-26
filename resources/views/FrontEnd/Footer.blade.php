@@ -49,24 +49,24 @@
             </div>
         </div>
     </div>
-
+    
 </div>
 <!-- Support Area End Here -->
 <!-- them so sanh -->
 <div class="modal" id="sosanhsp">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-
+      
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title"></h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-
+        
         <!-- Modal body -->
         <div class="modal-body">
           <div class="container">
-
+                       
               <table class="table table-hover" id="row_compare" >
                 <thead>
                   <tr style="text-align: center;">
@@ -82,12 +82,12 @@
               </table>
             </div>
         </div>
-
+        
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
-
+        
       </div>
     </div>
 </div>
@@ -96,17 +96,17 @@
 <div class="modal" id="yeuthichsp">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-
+      
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title"></h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-
+        
         <!-- Modal body -->
         <div class="modal-body">
           <div class="container">
-
+                       
               <table class="table table-hover" id="row_yeuthich" >
                 <thead>
                   <tr style="text-align: center;">
@@ -122,12 +122,12 @@
               </table>
             </div>
         </div>
-
+        
         <!-- Modal footer -->
         <div class="modal-footer">
           <a href="{{ route('wishlist') }}" class="btn btn-danger">{{ trans('home.chitiet') }}</a>
         </div>
-
+        
       </div>
     </div>
 </div>
@@ -150,8 +150,8 @@
                          </form>
                      </div>
                  </div>
-            </div>
-            <!-- Signup-Newsletter End -->
+            </div> 
+            <!-- Signup-Newsletter End -->                   
             <div class="row">
                 <!-- Single Footer Start -->
                 <div class="col-lg-2 col-md-4 col-sm-6">
@@ -198,7 +198,7 @@
                                 <li><a href="#">Gift Certificates</a></li>
                                 <li><a href="#">Affiliate</a></li>
                                 <li><a href="#">Specials</a></li>
-                                <li><a href="#">Site Map</a></li>
+                                <li><a href="#">Site Map</a></li>      
                             </ul>
                         </div>
                     </div>
@@ -227,15 +227,15 @@
                         <h3 class="footer-title">My Account</h3>
                         <div class="footer-content">
                             <ul class="footer-list address-content">
-                                <li><i class="lnr lnr-map-marker"></i> Address: HCM.</li>
-                                <li><i class="lnr lnr-envelope"></i><a href="mailto:npn020899@gmail.com"> mail Us: Support@SHOPPHUOCTHIEN.vn </a></li>
+                                <li><i class="lnr lnr-map-marker"></i> Address: 1XX Bình Dương, TDM.</li>
+                                <li><i class="lnr lnr-envelope"></i><a href="mailto:npn020899@gmail.com"> mail Us: Support@ShopPV.vn </a></li>
                                 <li>
                                     <i class="lnr lnr-phone-handset"></i><a href="tel:+84773654031"> Phone:(+84) 773654031) </a>
                                 </li>
                             </ul>
                             <div class="payment mt-25 bdr-top pt-30">
                                 <a href="#"><img class="img" src="{{asset('source/assets/frontend/img/payment/1.png')}}" alt="payment-image"></a>
-                            </div>
+                            </div>                                   
                         </div>
                     </div>
                 </div>
@@ -267,8 +267,8 @@
     <div class="footer-bottom pb-30">
         <div class="container">
 
-             <div class="copyright-text text-center">
-                <p>Copyright © 2021 <a target="_blank" href="#">SHOPPHUOCTHIEN</a> All Rights Reserved.</p>
+             <div class="copyright-text text-center">                    
+                <p>Copyright © 2021 <a target="_blank" href="#">ShopPv</a> All Rights Reserved.</p>
              </div>
         </div>
         <!-- Container End -->
@@ -341,8 +341,8 @@
                                             <input class="quantity mr-40" type="number" min="1" value="1">
                                         </form>
                                         @if($all->product_quantity>0)
-                                        <a class="add-cart"
-                                        <?php
+                                        <a class="add-cart" 
+                                        <?php 
                                             if(Auth::check() || Session::get('user_name_login')){
                                                 $addnewcart = route('themgiohang',$all->id);
                                             }else{

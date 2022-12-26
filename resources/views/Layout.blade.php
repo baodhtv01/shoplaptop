@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>@yield('title') || SHOPPHUOCTHIEN</title>
+    <title>@yield('title') || ShopPv</title>
     @include('FrontEnd.Style.Link')
 
 </head>
@@ -27,7 +27,7 @@
                 </div>
                 <!-- Row End -->
             </div>
-            <!-- Container End -->
+            <!-- Container End -->           
         </div>
         <!-- Categorie Menu & Slider Area End Here -->
         @yield('content-layout')

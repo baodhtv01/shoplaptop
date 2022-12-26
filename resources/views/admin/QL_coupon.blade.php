@@ -7,7 +7,7 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">{{ trans('home_ad.ql_coupon') }}</h6>
         </div>
-
+        
         @if(session()->has('failures'))
         <div>
            <table class="table table-danger classs-style">
@@ -105,30 +105,26 @@
                             <td>{{$cp->coupon_code }}</td>
                             <td>
                                 @if($cp->coupon_condition == 0)
-                                    <span style="color: #e62e04;" class="fas fa-percent"></span>
+                                    <span style="color: #4e73df;" class="fas fa-percent"></span>
                                 @else
                                     <span style="color: #e74a3b;" class="far fa-money-bill-alt"></span>
                                 @endif
                             </td>
-                           <td>{{$cp->coupon_date_start }}</td>
-                           <td>{{$cp->coupon_date_end }}</td>
-                           <td><?php $date_end = date_create($cp->coupon_date_end); ?>
-                               @if(date('Y-m-d') <= $cp->coupon_date_end)
-                                   <span class="still-term tag-style">Còn Hạn</span>
-                               @elseif(date('Y-m-d') <= $cp->coupon_date_start)
-                                   <span class="not-start tag-style">Chưa Bắt Đầu</span>
-                               @else
-                                   <span class="expired tag-style">Hết Hạn</span>
-                               @endif
-                           </td>
-                           <td>
-                               @if($cp->coupon_status == 0)
-                                   <a href="{{url('/unactive-coupon/'.$cp->coupon_id )}}"><span
-                                           class="fas fa-eye"></span></a>
-                               @else
-                                   <a href="{{url('/active-coupon/'.$cp->coupon_id )}}"><span style="color: #e74a3b;"
-                                                                                              class="fas fa-eye-slash"></span></a>
-                               @endif
+                            <td>{{$cp->coupon_date_start }}</td>
+                            <td>{{$cp->coupon_date_end }}</td>
+                            <td><?php $date_end = date_create($cp->coupon_date_end); ?>
+                                 @if(date_format($date_end, "m") >= $month_now && date_format($date_end, "Y") >= $year_now && $cp->coupon_date_end >= $today) 
+                                    <span class="still-term tag-style">Còn Hạn</span>
+                                 @else
+                                    <span class="expired tag-style">Hết Hạn</span>
+                                 @endif
+                            </td>
+                            <td>
+                                @if($cp->coupon_status == 0)
+                                <a href="{{url('/unactive-coupon/'.$cp->coupon_id )}}"><span class="fas fa-eye"></span></a>
+                                @else
+                                <a href="{{url('/active-coupon/'.$cp->coupon_id )}}"><span style="color: #e74a3b;" class="fas fa-eye-slash"></span></a>
+                                @endif
                             </td>
                             <td style="width: 100px">
                                 <!-- <a href="{{route('update_coupon', $cp->coupon_id  )}}"> -->
@@ -138,8 +134,8 @@
                                 <button class="btn btn-outline-danger delete" data-toggle="modal" data-target="#couponDel_{{$cp->coupon_id}}" type="button"><i class="fas fa-trash-alt"></i></button>
                                 <!-- </a> -->
                             </td>
-
-                           <!-- Modal Delete-->
+                       
+                            <!-- Modal Delete-->
                             <div class="modal fade" id="couponDel_{{$cp->coupon_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -152,10 +148,10 @@
                                         <div class="modal-body">Chọn "Delete" bên dưới nếu bạn đã chắc chắn muốn xóa.</div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ</button>
-
+                              
                                             <form method="" action="{{route('deletecoupon', $cp->coupon_id  )}}">
-
-                                            <button type="submit" class="btn btn-danger">
+                                                
+                                                <button type="submit" class="btn btn-danger">
                                                     Delete
                                                 </button>
                                             </form>
@@ -241,14 +237,14 @@
     <div class="modal" id="ExcelCoupon">
         <div class="modal-dialog">
           <div class="modal-content">
-
-              <!-- Modal Header -->
+          
+            <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">{{ trans('home_ad.import') }} / {{ trans('home_ad.export') }} Excel</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-
-              <!-- Modal body -->
+            
+            <!-- Modal body -->
             <div class="modal-body">
                 <div style="margin-top: 15px; margin-bottom: 10px; margin-left: 2px">
                     <table>
@@ -278,12 +274,12 @@
                     </table>
                 </div>
             </div>
-
-              <!-- Modal footer -->
+            
+            <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-
+            
           </div>
         </div>
     </div>
@@ -336,21 +332,18 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
-                                class="icofont icofont-eye-alt"></i>Close
-                        </button>
-                        <button type="submit" class="btn btn-primary"><i class="icofont icofont-check-circled"></i>Add
-                        </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="icofont icofont-eye-alt"></i>Close</button>
+                        <button type="submit"  class="btn btn-primary"><i class="icofont icofont-check-circled"></i>Add</button>
 
                     </div>
                 </form>
             </div>
         </div>
-    </div>
-    <style type="text/css">
+    </div> 
+<style type="text/css">
 
-        .classs-style li {
-            list-style-type: none;
-        }
-    </style>
+    .classs-style li{
+        list-style-type: none;
+    }
+</style>
 @endsection
